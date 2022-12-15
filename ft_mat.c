@@ -75,7 +75,7 @@ double *descente(double **L,double *B_h,int n)
         Y = malloc(sizeof(double)*n);
 	Y[0]=B_h[0];
 	for(int i = 1;i<n;i++)
-		Y[i]=B_h[i] - L[i][i-1];
+		Y[i]=B_h[i] - L[i][i-1]*Y[i-1];
 	return (Y);
 }
 
